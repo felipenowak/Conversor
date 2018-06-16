@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "1612f10c-cc66-4832-906b-e1751af42f34",
+		"name": "Filmes e Séries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Logan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1549bcde-626d-4a1f-ae24-66b5083a74f7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 1200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Logan\");",
+							"    pm.expect(pm.response.text()).to.include(\"Jackman\");",
+							"    pm.expect(pm.response.text()).to.include(\"Drama\");",
+							"    pm.expect(pm.response.text()).to.include(\"Nominated\");",
+							"    pm.expect(pm.response.text()).to.include(\"However\");",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    tests[\"Verify if Title{} is Logan\"] = jsonData.Title === \"Logan\";",
+							"    tests[\"Verify if Year{} is 2017\"] = jsonData.Year === \"2017\";",
+							"    ",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=Logan&apikey=ab5c5dc",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "Logan"
+						},
+						{
+							"key": "apikey",
+							"value": "ab5c5dc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Black Mirror",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "df2796a9-77b4-4de2-a1ee-30a6a72227ce",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 1200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Black Mirror\");",
+							"    pm.expect(pm.response.text()).to.include(\"Beatrice\");",
+							"    pm.expect(pm.response.text()).to.include(\"series\");",
+							"    pm.expect(pm.response.text()).to.include(\"exploring\");",
+							"    pm.expect(pm.response.text()).to.include(\"twisted\");",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    tests[\"Verify if Title{} is Black Mirror\"] = jsonData.Title === \"Black Mirror\";",
+							"    tests[\"Verify if Year{} is 2011–\"] = jsonData.Year === \"2011–\";",
+							"    ",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://omdbapi.com?t=Black Mirror&apikey=ab5c5dc",
+					"protocol": "http",
+					"host": [
+						"omdbapi",
+						"com"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "Black Mirror"
+						},
+						{
+							"key": "apikey",
+							"value": "ab5c5dc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
